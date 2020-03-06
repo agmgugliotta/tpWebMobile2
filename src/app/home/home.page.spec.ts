@@ -28,7 +28,7 @@ describe('HomePage', () => {
     expect(component.title).toBe('Mon Titre');
   });
 
-  it('change title', () => {
+  it('update title', () => {
     component.updateTitle();
     expect(component.title).toBe('Mon Nouveau Titre');
   });
