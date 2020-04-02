@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from '../services/login.service';
 import User from '../services/models/User';
-import iUser from '../services/models/iUser';
 
 @Component({
   selector: 'app-login',
@@ -28,12 +27,13 @@ export class LoginPage implements OnInit {
     this.loading = true;
     this.error = null;
 
-    this.loginService.login(this.id, this.mdp).subscribe(user => {
-      this.user = user;
-      this.loading = false;
-    }, error => {
-      this.loading = false;
-      this.error = error;
-    });
+    this.loginService.login(this.id, this.mdp)
+        .subscribe(user => this.user = user,
+            error => {
+              this.error = error;
+              this.loading = false;
+            }, () => {
+              this.loading = false;
+            });
   }
 }
