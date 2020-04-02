@@ -22,6 +22,7 @@ export class LoginPage implements OnInit {
 
   login() {
     this.user = this.loginService.login(this.id, this.mdp);
+    console.log(this.user.id);
   }
 
 }
