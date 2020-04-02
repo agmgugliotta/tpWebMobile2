@@ -1,0 +1,21 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  ion-content {
+    max-width: 400px;
+
+    > ion-item {
+      margin-bottom: 5px;
+
+      > ion-label {
+        color: blue;
+
+        &.color-red{
+          color: red;
+        }
+      }
+    }
+  }
+}
