@@ -12,9 +12,10 @@
 - Angular:
     - [Http Get Request](https://angular.io/guide/http) :white_check_mark:
     - Using Observable and Pipe Operator :white_check_mark:
-    - [Units Tests with HttpClientTestingModule](https://www.learnrxjs.io/)
+    - [Units Tests with HttpClientTestingModule](https://www.learnrxjs.io/) :white_check_mark:
     
 - Ionic:
-    - [Ionic UI Component](https://ionicframework.com/docs/components)
-    - Android local Build
+    - [Ionic UI Component](https://ionicframework.com/docs/components) :white_check_mark:
+    - [Ionic Native](https://ionicframework.com/docs/native) *onglet Community*
+    - Android local Build 
     
