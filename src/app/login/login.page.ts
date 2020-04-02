@@ -13,8 +13,10 @@ export class LoginPage implements OnInit {
   id = '';
   mdp = '';
 
-  user: iUser;
+  user: User;
   loading = false;
+
+  error: string;
 
   constructor(private loginService: LoginService) {
   }
@@ -24,10 +26,14 @@ export class LoginPage implements OnInit {
 
   login() {
     this.loading = true;
-    this.loginService.login(this.id, this.mdp).subscribe(users => {
-      this.user = users[0];
+    this.error = null;
+
+    this.loginService.login(this.id, this.mdp).subscribe(user => {
+      this.user = user;
       this.loading = false;
+    }, error => {
+      this.loading = false;
+      this.error = error;
     });
   }
-
 }
