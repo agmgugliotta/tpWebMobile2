@@ -10,10 +10,11 @@
     - Readme with Github Actions Badges :white_check_mark:
 
 - Angular:
-    - Http Get Request :white_check_mark:
+    - [Http Get Request](https://angular.io/guide/http) :white_check_mark:
     - Using Observable and Pipe Operator :white_check_mark:
-    - Units Tests with HttpClientTestingModule
+    - [Units Tests with HttpClientTestingModule](https://www.learnrxjs.io/)
     
 - Ionic:
+    - [Ionic UI Component](https://ionicframework.com/docs/components)
     - Android local Build
     
