@@ -4,6 +4,7 @@
 #### Notation
 
 - CI:
+    - Cache :white_check_mark:
     - Build :white_check_mark:
     - Units tests :white_check_mark:
     - E2E test :white_check_mark:
@@ -16,6 +17,6 @@
     
 - Ionic:
     - [Ionic UI Component](https://ionicframework.com/docs/components) :white_check_mark:
-    - [Ionic Native](https://ionicframework.com/docs/native) *onglet Community*
-    - Android local Build 
+    - [Ionic Native](https://ionicframework.com/docs/native) *onglet Community* :white_check_mark:
+    - Android local Build :white_check_mark:
     
