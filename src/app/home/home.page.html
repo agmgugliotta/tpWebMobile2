@@ -19,7 +19,7 @@
   </div>
 </ion-content-->
 
-<ion-content [fullscreen]="true" align="center">
+<ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large" >Blank 2</ion-title>
@@ -38,6 +38,7 @@
         and climb a mountain or spend a week in the woods. Wash your spirit clean.
       </ion-card-content>
     </ion-card>
+
     <ion-card>
       <ion-item (click)="fireAlert()" class="ion-activated">
         <ion-icon name="warning" slot="start"></ion-icon>
@@ -57,6 +58,26 @@
 
     <ion-card *ngIf="imgData">
       <img [src]="imgData">
+    </ion-card>
+
+    <ion-card *ngIf="data">
+      <ion-row >
+        <ion-col>
+          Longitude
+        </ion-col>
+        <ion-col>
+          Latitude
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row *ngFor="let coordinate of data">
+        <ion-col>
+          {{coordinate.latitude}}
+        </ion-col>
+        <ion-col>
+          {{coordinate.longitude}}
+        </ion-col>
+      </ion-row>
     </ion-card>
   </div>
 </ion-content>
