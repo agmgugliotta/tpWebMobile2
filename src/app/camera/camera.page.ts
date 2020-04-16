@@ -17,7 +17,7 @@ export class CameraPage implements OnInit {
   }
 
   // Camera Preview
-  /*preview() {
+  preview() {
     // camera options (Size and location).
     // In the following example, the preview uses the rear camera and display the preview in the back of the webview
     const cameraPreviewOpts: CameraPreviewOptions = {
@@ -25,9 +25,9 @@ export class CameraPage implements OnInit {
       y: 0,
       width: window.screen.width,
       height: window.screen.height,
-      camera: 'rear',
-      tapPhoto: true,
-      previewDrag: true,
+      camera: 'front',
+      tapPhoto: false,
+      previewDrag: false,
       toBack: true,
       alpha: 1
     };
@@ -42,10 +42,10 @@ export class CameraPage implements OnInit {
         });
 
     // Set the handler to run every time we take a picture
-    this.cameraPreview.setOnPictureTakenHandler().subscribe((result) => {
+    /*this.cameraPreview.setOnPictureTakenHandler().subscribe((result) => {
       console.log(result);
       // do something with the result
-    });
+    });*/
 
     // picture options
     const pictureOpts: CameraPreviewPictureOptions = {
@@ -55,7 +55,7 @@ export class CameraPage implements OnInit {
     };
 
     // take a picture
-    this.cameraPreview.takePicture(this.pictureOpts).then((imageData) => {
+    /*this.cameraPreview.takePicture(this.pictureOpts).then((imageData) => {
       this.picture = 'data:image/jpeg;base64,' + imageData;
     }, (err) => {
       console.log(err);
@@ -68,8 +68,7 @@ export class CameraPage implements OnInit {
     }, (err) => {
       console.log(err);
       this.picture = 'assets/img/test.jpg';
-    });
-
+    });*/
 
     // Switch camera
     this.cameraPreview.switchCamera();
@@ -79,5 +78,5 @@ export class CameraPage implements OnInit {
 
     // Stop the camera preview
     this.cameraPreview.stopCamera();
-  }*/
+  }
 }
