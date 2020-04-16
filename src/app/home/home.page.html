@@ -45,6 +45,11 @@
         <ion-label>Fire Alert</ion-label>
       </ion-item>
 
+      <ion-item (click)="notification()" class="ion-activated">
+        <ion-icon name="warning" slot="start"></ion-icon>
+        <ion-label>Fire Alert</ion-label>
+      </ion-item>
+
       <ion-item>
         <ion-label>Date : </ion-label>
         <ion-datetime (ionChange)="fireAlert()" displayFormat="DD/MM/YYYY" placeholder="Select Date"></ion-datetime>
