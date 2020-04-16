@@ -23,7 +23,8 @@ export class HomePage {
   constructor(private alertController: AlertController,
               private camera: Camera,
               private geolocation: Geolocation,
-              private localNotifications: LocalNotifications ) {this.geoLoc(); this.notification(); }
+              private localNotifications: LocalNotifications) {this.geoLoc(); this.notification();
+  }
 
   updateTitle() {
     this.title = 'Mon Nouveau Titre';
@@ -47,6 +48,7 @@ export class HomePage {
     await alert.present();
   }
 
+  // Camera
   takePicture() {
     const options1: CameraOptions = {
       quality: 100,
@@ -65,6 +67,7 @@ export class HomePage {
     });
   }
 
+  // Geolocation
   geoLoc() {
     this.geolocation.getCurrentPosition().then((resp: Geoposition) => {
       // console.log(resp.coords.latitude);
@@ -92,13 +95,13 @@ export class HomePage {
     });
 
 
-// Schedule multiple notifications
+  // Schedule multiple notifications
     this.localNotifications.schedule([{
       id: 1,
       text: 'Multi ILocalNotification 1',
       // sound: isAndroid ? 'file://sound.mp3': 'file://beep.caf',
       // data: { secret: key }
-    },{
+    }, {
       id: 2,
       title: 'Local ILocalNotification Example',
       text: 'Multi ILocalNotification 2',
@@ -106,7 +109,7 @@ export class HomePage {
     }]);
 
 
-// Schedule delayed notification
+  // Schedule delayed notification
     this.localNotifications.schedule({
       text: 'Delayed ILocalNotification',
       trigger: {at: new Date(new Date().getTime() + 3600)},
