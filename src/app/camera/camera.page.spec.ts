@@ -2,6 +2,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { CameraPage } from './camera.page';
+import {RouterTestingModule} from '@angular/router/testing';
+import { CameraPreview, CameraPreviewPictureOptions, CameraPreviewOptions
+  , CameraPreviewDimensions } from '@ionic-native/camera-preview/ngx';
 
 describe('CameraPage', () => {
   let component: CameraPage;
@@ -10,7 +13,8 @@ describe('CameraPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CameraPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(), RouterTestingModule],
+      providers: [CameraPreview]
     }).compileComponents();
 
     fixture = TestBed.createComponent(CameraPage);
@@ -20,5 +24,6 @@ describe('CameraPage', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+    // TODO
   });
 });

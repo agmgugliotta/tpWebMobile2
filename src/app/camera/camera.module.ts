@@ -5,7 +5,8 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
 import { CameraPage } from './camera.page';
-import {Camera} from '@ionic-native/camera/ngx';
+import { CameraPreview, CameraPreviewPictureOptions, CameraPreviewOptions
+  , CameraPreviewDimensions } from '@ionic-native/camera-preview/ngx';
 
 @NgModule({
   imports: [
@@ -15,12 +16,11 @@ import {Camera} from '@ionic-native/camera/ngx';
     RouterModule.forChild([
       {
         path: '',
-        component: Camera
+        component: CameraPage
       }
     ])
   ],
-  entryComponents: [CameraPage],
   declarations: [CameraPage],
-  providers: [Camera]
+  providers: [CameraPreview]
 })
 export class CameraPageModule {}
