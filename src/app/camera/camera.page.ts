@@ -47,7 +47,6 @@ export class CameraPage implements OnInit {
       // do something with the result
     });
 
-
     // picture options
     const pictureOpts: CameraPreviewPictureOptions = {
       width: 1280,
