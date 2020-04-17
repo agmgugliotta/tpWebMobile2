@@ -5,6 +5,7 @@ import {AlertController} from '@ionic/angular';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Geolocation, Geoposition, Coordinates } from '@ionic-native/geolocation/ngx';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,8 @@ export class HomePage {
   title: string;
   private user: User;
 
+  alertContent: string;
+
   imgData: string;
   // resp: Coordinates;
   data: Coordinates[] = [];
@@ -23,7 +26,17 @@ export class HomePage {
   constructor(private alertController: AlertController,
               private camera: Camera,
               private geolocation: Geolocation,
-              private localNotifications: LocalNotifications) {this.geoLoc(); this.notification();
+              private localNotifications: LocalNotifications,
+              private route: Router
+              ) {this.geoLoc(); this.notification();
+  }
+
+  camerapage() {
+    this.route.navigate(['/camera']);
+  }
+
+  loginpage() {
+    this.route.navigate(['/login']);
   }
 
   updateTitle() {
@@ -42,6 +55,7 @@ export class HomePage {
       message: 'Ceci est une alerte.',
       buttons: ['Valider']
     });
+    this.alertContent = alert.message;
 
     alert.onDidDismiss().then(() => console.log('Alerte masquée'));
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CameraPreview, CameraPreviewPictureOptions, CameraPreviewOptions
   , CameraPreviewDimensions } from '@ionic-native/camera-preview/ngx';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-camera',
@@ -11,9 +12,13 @@ export class CameraPage implements OnInit {
 
   picture: string;
 
-  constructor(private cameraPreview: CameraPreview) {/*this.preview();*/ }
+  constructor(private cameraPreview: CameraPreview, private route: Router) {this.preview(); }
 
   ngOnInit() {
+  }
+
+  homepage() {
+    this.route.navigate(['/home']);
   }
 
   // Camera Preview
@@ -25,11 +30,11 @@ export class CameraPage implements OnInit {
       y: 0,
       width: window.screen.width,
       height: window.screen.height,
-      camera: 'front',
-      tapPhoto: false,
+      camera: 'back',
+      toBack: false,
+      tapPhoto: true,
       previewDrag: false,
-      toBack: true,
-      alpha: 1
+      disableExifHeaderStripping: false
     };
 
     // start camera
@@ -55,7 +60,7 @@ export class CameraPage implements OnInit {
     };
 
     // take a picture
-    /*this.cameraPreview.takePicture(this.pictureOpts).then((imageData) => {
+    this.cameraPreview.takePicture(pictureOpts).then((imageData) => {
       this.picture = 'data:image/jpeg;base64,' + imageData;
     }, (err) => {
       console.log(err);
@@ -63,12 +68,12 @@ export class CameraPage implements OnInit {
     });
 
     // take a snap shot
-    this.cameraPreview.takeSnapshot(this.pictureOpts).then((imageData) => {
+    this.cameraPreview.takeSnapshot(pictureOpts).then((imageData) => {
       this.picture = 'data:image/jpeg;base64,' + imageData;
     }, (err) => {
       console.log(err);
       this.picture = 'assets/img/test.jpg';
-    });*/
+    });
 
     // Switch camera
     this.cameraPreview.switchCamera();
@@ -77,6 +82,6 @@ export class CameraPage implements OnInit {
     this.cameraPreview.setColorEffect('negative');
 
     // Stop the camera preview
-    this.cameraPreview.stopCamera();
+    // this.cameraPreview.stopCamera();
   }
 }

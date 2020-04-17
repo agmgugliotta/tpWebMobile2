@@ -38,4 +38,17 @@ describe('HomePage', () => {
     component.updateTitle();
     expect(component.title).toBe('Mon Nouveau Titre');
   });
+
+  it('fire alert', () => {
+    component.alertContent = 'Test';
+    expect(component.alertContent).toBe('Test');
+  });
+
+  it('take picture', () => {
+    expect(component.imgData).toBeUndefined();
+  });
+
+  it('geoloc', () => {
+    expect(component.data).toBeDefined();
+  });
 });
