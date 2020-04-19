@@ -22,6 +22,6 @@
     - travail en autonomie
         - Géolocalisation :white_check_mark:
         - Affichage d'une notification sur le clic d'un bouton :white_check_mark:
-        - Affichage d'une preview de la caméra dans une NOUVELLE page
+        - Affichage d'une preview de la caméra dans une NOUVELLE page :white_check_mark:
     - Android local Build :white_check_mark:
     
