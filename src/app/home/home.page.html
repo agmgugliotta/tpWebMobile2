@@ -28,11 +28,13 @@
 
   <div id="container">
     <ion-card>
+      <strong (click)="updateTitle()">Ready to create an app?</strong>
+      <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
       <ion-button (click)="camerapage()">Camera</ion-button>
       <ion-button (click)="loginpage()">Login</ion-button>
       <ion-card-header>
         <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-        <ion-card-title>Card Title</ion-card-title>
+        <ion-card-title>{{title}}</ion-card-title>
       </ion-card-header>
 
       <ion-card-content>

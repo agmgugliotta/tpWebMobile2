@@ -51,4 +51,9 @@ describe('HomePage', () => {
   it('geoloc', () => {
     expect(component.data).toBeDefined();
   });
+
+  it('notification', () => {
+    component.notif = 'Test';
+    expect(component.notif).toBe('Test');
+  });
 });

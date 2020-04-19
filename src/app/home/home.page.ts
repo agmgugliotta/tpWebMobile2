@@ -23,6 +23,8 @@ export class HomePage {
   // resp: Coordinates;
   data: Coordinates[] = [];
 
+  notif = 'Ceci est une notification';
+
   constructor(private alertController: AlertController,
               private camera: Camera,
               private geolocation: Geolocation,
@@ -44,9 +46,9 @@ export class HomePage {
     console.log(this.user);
   }
 
-  maNouvelleMetgodeQuiNeSeraPasTestee() {
+  /*maNouvelleMetgodeQuiNeSeraPasTestee() {
     this.title = 'Mon Nouveau Titre';
-  }
+  }*/
 
   async fireAlert() {
     const alert = await this.alertController.create({
@@ -103,32 +105,9 @@ export class HomePage {
     // Schedule a single notification
     this.localNotifications.schedule({
       id: 1,
-      text: 'Single ILocalNotification',
+      text: this.notif,
       // sound: isAndroid? 'file://sound.mp3': 'file://beep.caf',
       // data: { secret: key }
-    });
-
-
-  // Schedule multiple notifications
-    this.localNotifications.schedule([{
-      id: 1,
-      text: 'Multi ILocalNotification 1',
-      // sound: isAndroid ? 'file://sound.mp3': 'file://beep.caf',
-      // data: { secret: key }
-    }, {
-      id: 2,
-      title: 'Local ILocalNotification Example',
-      text: 'Multi ILocalNotification 2',
-      icon: 'http://example.com/icon.png'
-    }]);
-
-
-  // Schedule delayed notification
-    this.localNotifications.schedule({
-      text: 'Delayed ILocalNotification',
-      trigger: {at: new Date(new Date().getTime() + 3600)},
-      led: 'FF0000',
-      sound: null
     });
   }
 }
