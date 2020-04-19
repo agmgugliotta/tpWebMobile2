@@ -65,11 +65,6 @@ export class CameraPage implements OnInit {
   this.cameraPreview.switchCamera();
   }
 
-  colorEffect() {
-    // set color effect to negative
-    this.cameraPreview.setColorEffect('negative');
-  }
-
   stopCamera() {
   // Stop the camera preview
   this.cameraPreview.stopCamera();

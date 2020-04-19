@@ -33,7 +33,6 @@ describe('CameraPage', () => {
     component.startCamera();
     component.takePicture();
     component.switchCamera();
-    component.colorEffect();
     component.stopCamera();
     expect(component.picture).toBeDefined();
   });
