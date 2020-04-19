@@ -1,5 +1,15 @@
-<ion-content class=""content-bkgnd>
+<ion-content>
   <ion-button (click)="homepage()">Home</ion-button>
-  <ion-button (click)="preview()">Camera</ion-button>
-  <!--ion-img class="image-container">{{picture}}</ion-img-->
+  <br>
+  <ion-button (click)="startCamera()">Start camera</ion-button>
+  <ion-button (click)="switchCamera()">Start camera</ion-button>
+  <ion-button (click)="colorEffect()">Start camera</ion-button>
+  <ion-button (click)="takePicture()">Take picture</ion-button>
+  <ion-button (click)="stopCamera()">Stop camera</ion-button>
+  <br>
+</ion-content>
+<ion-content class=""content-bkgnd>
+  <ion-card *ngIf="picture">
+    <img [src]="picture" class="image-container">
+  </ion-card>
 </ion-content>

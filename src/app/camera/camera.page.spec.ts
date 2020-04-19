@@ -24,6 +24,17 @@ describe('CameraPage', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-    // TODO
+    expect(component.picture).toBeUndefined();
+  });
+
+  it('Take picture', () => {
+    component.picture = null;
+    expect(component.picture).toBeNull();
+    component.startCamera();
+    component.takePicture();
+    component.switchCamera();
+    component.colorEffect();
+    component.stopCamera();
+    expect(component.picture).toBeDefined();
   });
 });
